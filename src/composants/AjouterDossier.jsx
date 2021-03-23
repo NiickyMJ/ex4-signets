@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useState } from 'react';
 import { TwitterPicker } from 'react-color';
+import { red } from '@material-ui/core/colors';
 
 export default function AjouterDossier({ouvert, setOuvert, gererAjout}) {
   const [nom, setNom] = useState('');
@@ -33,8 +34,8 @@ export default function AjouterDossier({ouvert, setOuvert, gererAjout}) {
             onChange={(e) => setNom(e.target.value)}
             defaultValue={nom}
           />
-          <TextField
-            margin="dense"
+          <TextField 
+            margin="normal"
             id="urlImage"
             label="Adresse de l'image de couverture"
             type="text"
@@ -50,10 +51,10 @@ export default function AjouterDossier({ouvert, setOuvert, gererAjout}) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={()=>{setOuvert(false); viderChamps()}} color="primary">
+          <Button onClick={()=>{setOuvert(false); viderChamps()}} variant="contained" color="primary" style={{backgroundColor: '#8B0000'}}>
             Annuler
           </Button>
-          <Button onClick={() => {nom !== '' && gererAjout(nom, couverture, couleur); viderChamps(); }} color="primary">
+          <Button onClick={() => {nom !== '' && gererAjout(nom, couverture, couleur); viderChamps(); }} variant="contained" color="primary" style={{backgroundColor: '#009933'}}>
             Ajouter
           </Button>
         </DialogActions>
