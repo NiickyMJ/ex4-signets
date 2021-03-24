@@ -33,15 +33,17 @@ export default function ListeDossiers({utilisateur, etatDossiers}) {
   );
 
   return (
-    dossiers ?
+    
     <ul className="ListeDossiers">
       {
+        dossiers ?
         dossiers.map( 
           dossier =>  <li key={dossier.id}><Dossier {...dossier} /></li>
         )
+        :
+        <AucunDossier />
       }
     </ul>
-    :
-    <AucunDossier />
+    
   );
 }
