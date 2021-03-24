@@ -12,6 +12,7 @@ export default function AjouterDossier({ouvert, setOuvert, gererAjout}) {
   const [nom, setNom] = useState('');
   const [couverture, setCouverture] = useState('');
   const [couleur, setCouleur] = useState('#537169');
+  const mesCouleurs = ['#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3'];
 
   function viderChamps() {
     setNom('');
@@ -44,7 +45,8 @@ export default function AjouterDossier({ouvert, setOuvert, gererAjout}) {
             defaultValue={couverture}
           />
           <TwitterPicker 
-            width="100%" 
+            width="100%"
+            colors={mesCouleurs} 
             triangle="hide" 
             onChangeComplete={(couleur, e) => setCouleur(couleur.hex)}
             color={couleur}
